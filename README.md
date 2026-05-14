@@ -16,14 +16,16 @@ On Unix-based systems, the best practice is to move scripts to **/usr/local/bin*
 
 ### 1. Rename and Move the scripts: (Bash)
 Remove the .sh extension to make them feel like native commands.
+
 sudo mv git_infrastructer_workflow.sh /usr/local/bin/git-init-flow
 sudo mv manage_git.sh /usr/local/bin/git-manage
+sudo mv delete_branch_when_merged.sh /usr/local/bin/git-clean-merged
+sudo mv delete_branch_when_its_too_old.sh /usr/local/bin/git-clean-stale
 
 
 
 ### 2. Make them executable: (Bash)
-sudo chmod +x /usr/local/bin/git-init-flow /usr/local/bin/git-manage
-
+sudo chmod +x /usr/local/bin/git-init-flow /usr/local/bin/git-manage /usr/local/bin/git-clean-merged /usr/local/bin/git-clean-stale
 
 
 ### 3. Usage:
@@ -33,6 +35,9 @@ git-init-flow <repo-url>
 
 git-manage
 
+git-clean-merged
+
+git-clean-stale
 
 
 ## 🪟 Windows
@@ -56,6 +61,10 @@ Open **Git Bash** (recommended) and run:
 ./git_infrastructer_workflow.sh
 
 ./manage_git.sh
+
+./delete_branch_when_merged
+
+./delete_branch_when_its_too_old
 
 *Note for Windows: If you use PowerShell, you may need to set an alias in your $PROFILE or run them via sh script_name.sh.*
 
